@@ -18,7 +18,9 @@ import { LocationModule } from './modules/location/location.module';
       database: process.env.DB_NAME || 'vehicle_tracking',
       autoLoadEntities: true,
       synchronize: true,
-      ssl: true,
+      ssl: {
+        rejectUnauthorized: false,
+      },
     }),
     VehicleModule,
     LocationModule,
